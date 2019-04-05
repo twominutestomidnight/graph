@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+ <form action = "http://localhost:5000/part_sql" method = "POST">
+           <p><strong>Which level would you like? (Select 3 Levels)</strong></p>
+    {% for col_name  in result %}
+          <input class="single-checkbox" type="checkbox" name="col" value={{col_name}}>{{col_name}}<br>
+    {% endfor %}
+        <p><input type = "submit" value = "submit" /></p>
+      </form>
+ <!--
+<div class="pricing-levels-3">
+          <p><strong>Which level would you like? (Select 3 Levels)</strong></p>
+    {% for col_name  in result %}
+          <input class="single-checkbox" type="checkbox" name="vehicle" value="Bike">{{col_name}}<br>
+    {% endfor %}
+        <p><input type = "submit" value = "submit" /></p>
+
+-->
+
+        </div>
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+<script>
+var limit = 2;
+$('input.single-checkbox').on('change', function(evt) {
+   if($(this).siblings(':checked').length >= limit) {
+       this.checked = false;
+   }
+});</script>
+</body>
+</html>
